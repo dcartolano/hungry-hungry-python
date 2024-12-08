@@ -25,12 +25,14 @@ def place_order(menu):
     menu_items = get_menu_items_dict(menu)
 
     # Launch the store and present a greeting to the customer
-    print("Howdy pardner! Welcome to the Hungry Hungry Python Restaurant.")
+    # print("Howdy pardner! Welcome to the Hungry Hungry Python Restaurant. (Welcome to the Generic Take Out Restaurant.)")
+    print("Welcome to the Generic Take Out Restaurant.")
 
     # TODO: Create a continuous while loop so customers can order multiple items
     while True:
         # TODO: Ask the customer what they want to order
-        print("What might'n you be a-cravin' today?")
+        # print("What might'n you be a-cravin' today? (What would you like to order?)")
+        print("What would you like to order? ")
 
         # Create a variable for the menu item number
         i = 1
@@ -57,7 +59,8 @@ def place_order(menu):
                 i += 1
 
         # TODO: Ask customer to input menu item number
-        menu_selection = input("Please type the item number of your menu selection: ")
+        # menu_selection = input("Please type the item number of your menu selection: ")
+        menu_selection = input("Type menu number: ")
 
         # TODO: Update the order list using the update_order function
         # TODO: Send the order list, menu selection, and menu items as arguments
@@ -65,13 +68,15 @@ def place_order(menu):
 
         # TODO: Ask the customer if they would like to order anything else
         # TODO: Let the customer know if they should type 'n' or 'N' to quit
-        quit_or_continue = input("Would you like to order anything else? Type \"N\" to quit: ")
+        # quit_or_continue = input("Would you like to order anything else? Type \"N\" to quit: ")
+        quit_or_continue = input("Would you like to keep ordering? (N) to quit: ")
 
         # TODO: Write a conditional statement that checks the user's input
         # TODO: The conditional statement should check for 'n' or 'N'
         if quit_or_continue.lower() == "n":
             # TODO: Write a print statement that thanks the customer for their order
-            print("Thank you kindly for the order, friend! Come back soon now, ya hear?")
+            # print("Thank you kindly for the order, friend! Come back soon now, ya hear?")
+            print("Thank you for your order.")
 
             # TODO: Use list comprehension to create a list called prices_list,
             # TODO: which contains the total prices for each item in the order list:
@@ -127,14 +132,16 @@ def update_order(order, menu_selection, menu_items):
 
             # TODO: Ask the customer for the quantity of the menu item
             # TODO: Use the item name variable in the question
-                quantity = input(f"How many \"{item_name}\" would you like? ")
+                # quantity = input(f"How many \"{item_name}\" would you like? ")
+                quantity = input(f"What quantity of {item_name} would you like? \n"
+                                 + "(This will default to 1 if number is not entered)\n")
 
             # TODO: Check if the quantity is a number, default to 1 if not
                 if quantity.isdigit():
                     quantity = int(quantity)
                 else:
                     quantity = 1
-                    print("That's not a number you silly buffoon! Setting quantity to 1 by default >:3")
+                    # print("That's not a number you silly buffoon! Setting quantity to 1 by default >:3")
 
             # TODO: Add a dictionary to the order list 
             # TODO: The dictionary should include the item name, price, and quantity
@@ -146,17 +153,19 @@ def update_order(order, menu_selection, menu_items):
                     "Quantity": quantity
                 })
                 break
-
+            
         # TODO: When the user's input isn't valid, 
         # TODO: tell the customer that their input isn't valid
         # buhhhh ???? shouldn't we already doing that in our if case above where we check the quantity input for this scenario?
         # and there's already also instructions below for if the original item# input was incorrect...
-
+            else:
+                print("Sorry, that number isn't an option.")
     # TODO: When the menu selection wasn't valid:
     # TODO: Print the menu selection and 
     # TODO: Tell the customer they didn't select a menu option
     if menu_selection_valid == False:
-        print(f"Sorry, \"{menu_selection}\" ain't no menu selection I ever heard of! Nothing has been added to your order.")
+        # print(f"Sorry, \"{menu_selection}\" ain't no menu selection I ever heard of! Nothing has been added to your order since your input 'a was not a menu option.'")
+        print(f"{menu_selection} was not a menu option.")
 
     # TODO: Return the updated order
     # print(order)
@@ -362,7 +371,8 @@ if __name__ == "__main__":
     receipt, total_price = place_order(meals)
 
     # Print out the customer's order
-    print("This is what we are preparing for you:\n")
+    # print("This is what we are preparing for you:\n")
+    print("This is what we are preparing for you.\n")
 
     # Print the receipt heading
     print_receipt_heading()
