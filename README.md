@@ -2,14 +2,9 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+This purpose of this app is to creat a simulation of an restaurant menu and ordering system that the user can interact with through the terminal. The "customer" can view the menu, select items and quantities, and after indicating that they are finished ordering, the program will "print out" a receipt for them to view their order summary.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-
+Through this app, I got to practice basic concepts with Python, like string manipulation, iterating through lists and dictionaries, and interacting with a user through the terminal. 
 
 ## Table of Contents
 
@@ -20,29 +15,17 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-
+Copy the SSH Key from the [GitHub Repository](https://github.com/dcartolano/hungry-hungry-python) and perform a git clone into a local directory of your choice. Open in VS Code or similar program. You must have Python 3 installed to run this program. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-
+In the integrated terminal, run `python order_system.py` or `python3 order_system.py` to start the app. From there, follow the instructions as directed. If invalid input is supplied, the progam is set up to automatically handle these cases and gently nudge you in the right direction.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Thanks to EdX and Northwestern for the starter code and the opportunity to practice these skills. 
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+Thanks also to my instructor and the EdX tutors for all the help and clarifications along the way.
 
 ## License
 
